@@ -1,0 +1,32 @@
+tank10000
+327337903
+Alexandr Tankov
+
+
+
+=============================
+=  README for ex9:
+=============================
+
+
+==================
+=  Description:  =
+==================
+
+The Asteroids Game - OOP design
+files:
+
+torpedo.py
+ship.py
+asteroid.py
+asteroids_main.py
+
+======================
+=  Special Comments  =  Design decisions
+======================
+1) I chose to put the torpedoes in the Gamerunner class instead in the Ship class. On the one hand it may sound logical that the torpedoes’ list should be located in the Ship class, because in real life they are always part of the Ship. On the other hand, I chose to put them in the GameRunner class because it is easier to manipulate them after they are fired. It is easier to keep them part of ship while they are not fired and they are moving with the ship. However, when a torpedo is fired, it moves one direction and the Ship can move a different one. so, when torpedo is fired GameRunner handles all the moving instead of the Ship.
+
+2) I added the fire-status field to the torpedo class in order to track the fired torpedos and the not fired ones. The alternative option is to create a fired_torpedos list within the GameRunner class. However it becomes pretty complicated to transition between the two, constantly removing and adding elements between one another
+
+3) I chose to put the asteroid  in the list instead of the dictionary. On the one hand, dictionary makes more sense, because there is no partucular order to the asteroids. however, in the program we constatly removing and adding asteroids to the list during iterations because asteroids are split when hit, and there are no secure way delete item from dictionary while iterating. 
+
